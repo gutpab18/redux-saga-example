@@ -1,0 +1,69 @@
+$color-1: #DB5F55;
+$color-2: #E1B43D;
+$color-3: #55B0A7;
+$color-4: #312F30;
+$color-5: #0079C0;
+$color-6: #42213E;
+
+$today-color: #55B0A7;
+
+.calendar-day {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	margin: 10px 0;
+
+	&.current-day {
+		div {
+			&.cd-left-content {
+				color: $today-color;
+			}
+
+			&.cd-right-content {
+				border-top: 1px solid $today-color;
+
+				.today-circle {
+					display: block;
+				}
+			}
+		}
+	}
+
+	div {
+		&.cd-left-content {
+			padding-top: 10px;
+			width: 60px;
+		}
+
+		&.cd-right-content {
+			flex-grow: 1;
+
+			.today-circle {
+				background-color: $today-color;
+				border-radius: 10px;
+				display: none;
+				float: left;
+				margin-left: -20px;
+				margin-top: -10px;
+				width: 20px;
+				height: 20px;
+			}
+		}
+
+		h2, h3 {
+			margin: 0;
+		}
+
+		h2 {
+			font-size: 28px;
+			line-height: 32px;
+		}
+
+		h3 {
+			font-size: 16px;
+			line-height: 20px;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+{
+    "fileExtensions": [
+        ".js",
+        ".jsx"
+    ],
+    "preset": "airbnb",
+    "excludeFiles": [
+        "node_modules/**",
+        "*.bundle.js"
+    ],
+    "requireTrailingComma": null,
+    "validateLineBreaks": null,
+    "validateIndentation": "\t",
+    "validateQuoteMarks": null
+}

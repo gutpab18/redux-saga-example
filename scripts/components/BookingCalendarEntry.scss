@@ -1,0 +1,75 @@
+/*$booking-background-color: #42444F;
+$booking-button-color: #55B0A7;
+$booking-button-hover-color: #0079C0;
+$booking-checked-out-color: #DB5F55;
+$booking-main-color: #FEFEFE;
+$booking-secondary-color: #A9A9A9;*/
+
+$calendar-entry-background-color: #42444F;
+$calendar-entry-accent-color: #EC407A;
+$calendar-entry-text-color: #FEFEFE;
+$calendar-entry-subtext-color: rgba(255, 255, 255, 0.8);
+$calendar-entry-button-color: transparent;
+$calendar-entry-button-text-color: #FEFEFE;
+$calendar-entry-button-hover-color: rgba(204, 204, 204, 0.15);
+$calendar-entry-button-pressed-color: rgba(204, 204, 204, 0.15);
+$calendar-entry-disabled-color: #EEE;
+$calendar-entry-disabled-text-color: rgb(159, 159, 159);
+$calendar-entry-disabled-subtext-color: rgba(159, 159, 159, 0.8);
+$calendar-entry-button-text-color: $calendar-entry-disabled-subtext-color;
+
+.booking-calendar-entry {
+	background-color: $calendar-entry-background-color;
+	border-radius: 2px;
+	color: $calendar-entry-subtext-color;
+	font-size: 15px;
+	margin-top: 10px;
+	padding: 8px 12px;
+
+	h1 {
+		color: $calendar-entry-text-color;
+		font-size: 20px;
+		font-weight: normal;
+		margin: 2px 0 6px;
+	}
+
+	&.checked-out {
+		background-color: $calendar-entry-accent-color;
+	}
+
+	&.cancelled {
+		background-color: $calendar-entry-disabled-color;
+		color: $calendar-entry-disabled-subtext-color;
+
+		h1 {
+			color: $calendar-entry-disabled-text-color;
+		}
+
+		button {
+			color: $calendar-entry-button-text-color;
+		}
+	}
+
+	button {
+		background-color: $calendar-entry-button-color;
+		border: none;
+		color: $calendar-entry-text-color;
+		cursor: pointer;
+		font-weight: bold;
+		margin-top: 6px;
+		padding: 12px 10px;
+		text-transform: uppercase;
+
+		&:hover {
+			background-color: $calendar-entry-button-hover-color;
+		}
+
+		&:active {
+			background-color: $calendar-entry-button-pressed-color;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+}

@@ -1,29 +1,37 @@
-import React from 'react';
+import React, { Component, PropTypes } from 'react';
 import moment from 'moment';
 import BookingCalendarEntry from './BookingCalendarEntry.js';
 import './CalendarDay.scss';
 
-export default class CalendarDay extends React.Component {
+export default class CalendarDay extends Component {
+	static propTypes = {
+		bookings: PropTypes.object.array,
+		cancelBooking: PropTypes.func.isRequired,
+		checkOutBooking: PropTypes.func.isRequired,
+		deleteBooking: PropTypes.func.isRequired,
+	}
+
 	render() {
-		var { bookings, cancelBooking, checkOutBooking, deleteBooking } = this.props;
-		var bookingsJsx = bookings.map(function (booking, i) {
+		const { bookings, cancelBooking, checkOutBooking, deleteBooking } = this.props;
+		const bookingsJsx = bookings.map((booking, i) => {
 			return (
 				<BookingCalendarEntry
 					key={i}
 					booking={booking}
 					cancelBooking={cancelBooking}
 					checkOutBooking={checkOutBooking}
-					deleteBooking={deleteBooking} />
+					deleteBooking={deleteBooking}
+				/>
 			);
 		});
 
-		var firstBooking = bookings.length > 0 ? bookings[0] : null;
-		var calendarDayClasses = 'calendar-day';
-		var jsx;
+		const firstBooking = bookings.length > 0 ? bookings[0] : null;
+		let calendarDayClasses = 'calendar-day';
+		let jsx;
 
 		if (firstBooking) {
-			var date = firstBooking.start.date();
-			var dayOfWeek = firstBooking.start.format('ddd');
+			const date = firstBooking.start.date();
+			const dayOfWeek = firstBooking.start.format('ddd');
 
 			if (date === moment().date()) {
 				calendarDayClasses += ' current-day';

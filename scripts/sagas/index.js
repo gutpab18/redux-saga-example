@@ -9,7 +9,8 @@ import * as actions from '../actions/bookings';
 import { START_POLL_BOOKINGS, STOP_POLL_BOOKINGS } from '../constants';
 import * as api from '../services/api';
 
-// Helper function that provides ability to delay for x milliseconds. Like: http://bluebirdjs.com/docs/api/promise.delay.html
+// Helper function that provides ability to delay for x milliseconds.
+// Like: http://bluebirdjs.com/docs/api/promise.delay.html
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 let pollPromise;
@@ -51,6 +52,6 @@ function* pollBookings() {
 export default function* root() {
 	yield [
 		fork(startBookingsPoll),
-		fork(stopBookingsPoll)
+		fork(stopBookingsPoll),
 	];
 }

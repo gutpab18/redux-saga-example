@@ -9,14 +9,14 @@ const fakeBookings = [
 			rego: 'EQB729',
 			make: 'Honda',
 			model: 'Accord',
-			year: '2008'
+			year: '2008',
 		},
 		passengers: [],
 		journeyToLocation: 'Gone Burger',
 		returnToLocation: 'Smartrak Hamilton',
 		start: moment(),
 		end: moment().add(2, 'h'),
-		status: 'APPROVED'
+		status: 'APPROVED',
 	},
 	{
 		id: 1,
@@ -25,14 +25,14 @@ const fakeBookings = [
 			rego: 'EQB729',
 			make: 'Honda',
 			model: 'Accord',
-			year: '2008'
+			year: '2008',
 		},
 		passengers: [],
 		journeyToLocation: 'Jacob\'s house',
 		returnToLocation: 'Smartrak Hamilton',
 		start: moment().add(3, 'h'),
 		end: moment().add(4, 'h'),
-		status: 'APPROVED'
+		status: 'APPROVED',
 	},
 	{
 		id: 2,
@@ -41,31 +41,31 @@ const fakeBookings = [
 			rego: 'EQB729',
 			make: 'Honda',
 			model: 'Accord',
-			year: '2008'
+			year: '2008',
 		},
 		passengers: [],
 		journeyToLocation: 'Party town',
 		returnToLocation: 'Smartrak Hamilton',
 		start: moment().add(2, 'd'),
 		end: moment().add(2, 'd').add(3, 'h'),
-		status: 'APPROVED'
-	}
+		status: 'APPROVED',
+	},
 ];
 
 const API_ROOT = 'https://api.smartrak.co.nz/';
 
-function fetch(url) {
+const fetch = (url) => {
 	return fakeBookings;
-}
+};
 
-function callApi(endpoint) {
-	const fullUrl =  API_ROOT + endpoint;
+const callApi = (endpoint) => {
+	const fullUrl = API_ROOT + endpoint;
 
 	// We are just pretending we are using ajax to talk to the server here.
 	// TODO: when really talking to the server we can use npm package https://github.com/matthew-andrews/isomorphic-fetch
 	return fetch(fullUrl);
-}
+};
 
 // api services
 // Arrow Functions (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-export const fetchBookings = () => callApi('bookings');
+export const fetchBookings = () => { callApi('bookings'); };

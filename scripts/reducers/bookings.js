@@ -4,7 +4,7 @@ import {
   FETCHED_BOOKINGS,
   CANCEL_BOOKING,
   CHECK_OUT_BOOKING,
-  DELETE_BOOKING
+  DELETE_BOOKING,
 } from '../constants';
 
 // TODO: this shouldn't be an array.
@@ -23,31 +23,31 @@ function receivedBookings(state = initialState, action) {
 // const a = [1, 2, 3];
 // const b = [...a, 4, 5];
 // b => [1, 2, 3, 4, 5]
-function removeBooking(bookings, id) {
-	const index = _.findIndex(bookings, { id: id });
+function removeBooking(currentBookings, id) {
+	const index = _.findIndex(currentBookings, { id });
 
 	return [
-		...bookings.slice(0, index),
-		...bookings.slice(index + 1)
+		...currentBookings.slice(0, index),
+		...currentBookings.slice(index + 1),
 	];
 }
 
-function updateStatus(bookings, id, status) {
-	const index = _.findIndex(bookings, { id: id });
+function updateStatus(currentBookings, id, status) {
+	const index = _.findIndex(currentBookings, { id });
 
-	return update(bookings, {
+	return update(currentBookings, {
 		[index]: {
-			status: { $set: status }
-		}
+			status: { $set: status },
+		},
 	});
 }
 
-function checkOut(bookings, id) {
-	return updateStatus(bookings, id, 'CHECKED_OUT');
+function checkOut(currentBookings, id) {
+	return updateStatus(currentBookings, id, 'CHECKED_OUT');
 }
 
-function cancel(bookings, id) {
-	return updateStatus(bookings, id, 'CANCELLED');
+function cancel(currentBookings, id) {
+	return updateStatus(currentBookings, id, 'CANCELLED');
 }
 
 export default function bookings(state = initialState, action) {

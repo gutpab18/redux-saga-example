@@ -22,27 +22,27 @@ export function stopBookingsPoll() {
 export function receivedBookings(bookings) {
 	return {
 		type: FETCHED_BOOKINGS,
-		bookings: bookings,
+		bookings,
 	};
 }
 
 export function cancelBooking(id) {
 	return {
 		type: CANCEL_BOOKING,
-		id: id,
+		id,
 	};
 }
 
 export function checkOutBooking(id) {
 	return {
 		type: CHECK_OUT_BOOKING,
-		id: id,
+		id,
 	};
 }
 
 export function deleteBooking(id) {
 	return {
 		type: DELETE_BOOKING,
-		id: id,
+		id,
 	};
 }

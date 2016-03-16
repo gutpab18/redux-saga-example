@@ -5,7 +5,7 @@ import './CalendarDay.scss';
 
 export default class CalendarDay extends Component {
 	static propTypes = {
-		bookings: PropTypes.object.array,
+		bookings: PropTypes.array,
 		cancelBooking: PropTypes.func.isRequired,
 		checkOutBooking: PropTypes.func.isRequired,
 		deleteBooking: PropTypes.func.isRequired,
@@ -30,8 +30,9 @@ export default class CalendarDay extends Component {
 		let jsx;
 
 		if (firstBooking) {
-			const date = firstBooking.start.date();
-			const dayOfWeek = firstBooking.start.format('ddd');
+			const startDate = moment(firstBooking.start);
+			const date = startDate.date();
+			const dayOfWeek = startDate.format('ddd');
 
 			if (date === moment().date()) {
 				calendarDayClasses += ' current-day';

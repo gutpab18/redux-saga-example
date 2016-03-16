@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import moment from 'moment';
 import './BookingCalendarEntry.scss';
 
 export default class BookingCalendarEntry extends Component {
@@ -44,8 +45,8 @@ export default class BookingCalendarEntry extends Component {
 
 	render() {
 		const { booking } = this.props;
-		const startTime = booking.start.format('HH:mm a');
-		const endTime = booking.end.format('HH:mm a');
+		const startTime = moment(booking.start).format('HH:mm a');
+		const endTime = moment(booking.end).format('HH:mm a');
 
 		return (
 			<div className={`booking-calendar-entry ${this.bookingStatusToClass(booking.status)}`}>

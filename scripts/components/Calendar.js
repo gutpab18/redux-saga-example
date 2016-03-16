@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import _ from 'lodash';
+import moment from 'moment';
 
 import CalendarDay from './CalendarDay';
 
@@ -7,7 +8,7 @@ import './Calendar.scss';
 
 export default class Calendar extends Component {
 	static propTypes = {
-		bookings: PropTypes.object.array,
+		bookings: PropTypes.array,
 		cancelBooking: PropTypes.func.isRequired,
 		checkOutBooking: PropTypes.func.isRequired,
 		deleteBooking: PropTypes.func.isRequired,
@@ -22,7 +23,7 @@ export default class Calendar extends Component {
 				return false;
 			}
 
-			return booking.start.dayOfYear();
+			return moment(booking.start).dayOfYear();
 		});
 
 		const bookingsJsx = _.map(bookingsByDay, (dayBookings, i) => {

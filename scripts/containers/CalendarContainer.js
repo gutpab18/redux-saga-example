@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { cancelBooking, checkOutBooking, deleteBooking } from '../actions/bookings';
@@ -6,6 +6,13 @@ import { cancelBooking, checkOutBooking, deleteBooking } from '../actions/bookin
 import Calendar from '../components/Calendar';
 
 class CalendarContainer extends Component {
+	static propTypes = {
+		bookings: PropTypes.array,
+		cancelBooking: PropTypes.func.isRequired,
+		checkOutBooking: PropTypes.func.isRequired,
+		deleteBooking: PropTypes.func.isRequired,
+	}
+
 	render() {
 		return (
 			<Calendar { ...this.props } />

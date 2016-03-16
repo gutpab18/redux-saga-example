@@ -14,8 +14,8 @@ const fakeBookings = [
 		passengers: [],
 		journeyToLocation: 'Gone Burger',
 		returnToLocation: 'Smartrak Hamilton',
-		start: moment(),
-		end: moment().add(2, 'h'),
+		start: moment({ hour: 8 }).toDate(),
+		end: moment({ hour: 11 }).toDate(),
 		status: 'APPROVED',
 	},
 	{
@@ -30,8 +30,8 @@ const fakeBookings = [
 		passengers: [],
 		journeyToLocation: 'Jacob\'s house',
 		returnToLocation: 'Smartrak Hamilton',
-		start: moment().add(3, 'h'),
-		end: moment().add(4, 'h'),
+		start: moment({ hour: 14 }).toDate(),
+		end: moment({ hour: 17 }).toDate(),
 		status: 'APPROVED',
 	},
 	{
@@ -46,8 +46,8 @@ const fakeBookings = [
 		passengers: [],
 		journeyToLocation: 'Party town',
 		returnToLocation: 'Smartrak Hamilton',
-		start: moment().add(2, 'd'),
-		end: moment().add(2, 'd').add(3, 'h'),
+		start: moment({ hour: 9 }).subtract('days', 1).toDate(),
+		end: moment({ hour: 17 }).subtract('days', 1).toDate(),
 		status: 'APPROVED',
 	},
 ];
@@ -68,4 +68,4 @@ const callApi = (endpoint) => {
 
 // api services
 // Arrow Functions (https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-export const fetchBookings = () => { callApi('bookings'); };
+export const fetchBookings = () => { return callApi('bookings'); };

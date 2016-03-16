@@ -13,6 +13,23 @@ import * as api from '../services/api';
 // Like: http://bluebirdjs.com/docs/api/promise.delay.html
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
+function* pollBookings() {
+	try {
+		while (true) {
+			console.log('Polled.');
+
+			const bookings = yield call(api.fetchBookings);
+			yield put(actions.receivedBookings(bookings));
+
+			yield call(delay, 10 * 100);
+		}
+	} catch (error) {
+		if (error instanceof SagaCancellationException) {
+			console.log('Poll cancelled.');
+		}
+	}
+}
+
 let pollPromise;
 
 function* startBookingsPoll() {
@@ -28,23 +45,6 @@ function* stopBookingsPoll() {
 		console.log('Stopping poll.');
 
 		yield cancel(pollPromise);
-	}
-}
-
-function* pollBookings() {
-	try {
-		while (true) {
-			console.log('Polled.');
-
-			const bookings = yield call(api.fetchBookings);
-			yield put(actions.receivedBookings(bookings));
-
-			yield call(delay, 10 * 100);
-		}
-	} catch (error) {
-		if (error instanceof SagaCancellationException) {
-			console.log('Poll cancelled.');
-		}
 	}
 }
 

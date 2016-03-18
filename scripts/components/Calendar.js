@@ -4,7 +4,7 @@ import moment from 'moment';
 
 import CalendarDay from './CalendarDay';
 
-import './Calendar.scss';
+import './Calendar.css';
 
 export default class Calendar extends Component {
 	static propTypes = {

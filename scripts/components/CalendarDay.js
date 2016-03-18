@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import moment from 'moment';
 import BookingCalendarEntry from './BookingCalendarEntry.js';
-import './CalendarDay.scss';
+import './CalendarDay.css';
 
 export default class CalendarDay extends Component {
 	static propTypes = {

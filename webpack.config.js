@@ -1,5 +1,8 @@
 var webpack = require('webpack');
 var ignore = new webpack.IgnorePlugin(/\.svg$/);
+var cssnext = require('postcss-cssnext');
+var cssImport = require('postcss-import');
+var precss = require('precss');
 
 module.exports = {
 	devtool: 'source-map',
@@ -17,7 +20,7 @@ module.exports = {
 	module: {
 		loaders: [
             { test: /\.jsx?$/, loaders: ['react-hot', 'babel-loader'], exclude: /node_modules/ },
-            { test: /\.scss$/, loaders: ['style', 'css', 'autoprefixer', 'sass'] }
+            { test: /\.css$/, loaders: ['style-loader', 'css-loader', 'postcss-loader'] }
         ]
 	},
 	plugins: [ignore],
@@ -26,5 +29,12 @@ module.exports = {
 		proxy: {
 			'/api/*': 'http://localhost:8081',
 		}
+	},
+	postcss: function(webpack) {
+		return [
+			cssImport({ addDependencyTo: webpack }),
+			precss(),
+			cssnext(),
+		];
 	}
 };

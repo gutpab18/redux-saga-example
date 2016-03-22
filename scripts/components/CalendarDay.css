@@ -52,7 +52,8 @@ $today-color: #55B0A7;
 			}
 		}
 
-		h2, h3 {
+		h2,
+		h3 {
 			margin: 0;
 		}
 

@@ -19,8 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="28d7ed65-acd7-4843-bbb1-e4a49e726d74" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/server/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/public/index.html" afterDir="false" />
+    <list default="true" id="28d7ed65-acd7-4843-bbb1-e4a49e726d74" name="Default Changelist" comment="update index html imports">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/public/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/server/public/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/public/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/public/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/public/js/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/public/js/vendor.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +74,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1597937726745</updated>
-      <workItem from="1597937728297" duration="4623000" />
+      <workItem from="1597937728297" duration="9624000" />
     </task>
     <servers />
   </component>
@@ -87,22 +92,30 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update index html imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="update index html imports" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1419" height="240" key="GridCell.Tab.0.bottom" timestamp="1597945426269">
+    <state width="1419" height="240" key="GridCell.Tab.0.bottom" timestamp="1597951355392">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="240" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.-180.1920.1080@0.0.1440.900" timestamp="1597945426269" />
-    <state width="1419" height="240" key="GridCell.Tab.0.center" timestamp="1597945426267">
+    <state width="1419" height="240" key="GridCell.Tab.0.bottom/0.0.1440.900/1440.-180.1920.1080@0.0.1440.900" timestamp="1597951355392" />
+    <state width="1419" height="240" key="GridCell.Tab.0.center" timestamp="1597951355391">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="240" key="GridCell.Tab.0.center/0.0.1440.900/1440.-180.1920.1080@0.0.1440.900" timestamp="1597945426267" />
-    <state width="1419" height="240" key="GridCell.Tab.0.left" timestamp="1597945426265">
+    <state width="1419" height="240" key="GridCell.Tab.0.center/0.0.1440.900/1440.-180.1920.1080@0.0.1440.900" timestamp="1597951355391" />
+    <state width="1419" height="240" key="GridCell.Tab.0.left" timestamp="1597951355389">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="240" key="GridCell.Tab.0.left/0.0.1440.900/1440.-180.1920.1080@0.0.1440.900" timestamp="1597945426265" />
-    <state width="1419" height="240" key="GridCell.Tab.0.right" timestamp="1597945426268">
+    <state width="1419" height="240" key="GridCell.Tab.0.left/0.0.1440.900/1440.-180.1920.1080@0.0.1440.900" timestamp="1597951355389" />
+    <state width="1419" height="240" key="GridCell.Tab.0.right" timestamp="1597951355391">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="240" key="GridCell.Tab.0.right/0.0.1440.900/1440.-180.1920.1080@0.0.1440.900" timestamp="1597945426268" />
+    <state width="1419" height="240" key="GridCell.Tab.0.right/0.0.1440.900/1440.-180.1920.1080@0.0.1440.900" timestamp="1597951355391" />
+    <state x="308" y="192" key="IDE.errors.dialog" timestamp="1597945683919">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="308" y="192" key="IDE.errors.dialog/0.0.1440.900/1440.-180.1920.1080@0.0.1440.900" timestamp="1597945683919" />
   </component>
 </project>
